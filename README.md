@@ -249,7 +249,7 @@ The user can see his messages on the same page, where `Form` is located, so that
 
 ### /remove | [url](http://localhost:5000/remove)
 
-[REMOVE] view function is protected by `@login_required` function and uses the very same mechanism as [EDIT] view function - `validate_on_submit()` checks POST request and its validation, and the database is queried to find records that match the criteria (`id`). If they do not match, user is redirected back to `(/remove)` view, and if they match, the record with this exact id is removed from the database. Once again, messages available to removal are shown on the same page to easen the burden of choosing records to delete.
+[REMOVE] view function is protected by `@login_required` function and uses the very same mechanism as [EDIT] view function - `validate_on_submit()` checks POST request and its validation, and the database is queried to find records that match the criteria (`id`). If they do not match, user is redirected back to `(/remove)` view, and if they match, the record with this exact id is removed from the database. Once again, messages available to removal are shown on the same page to ease the burden of choosing records to delete.
 
 ```
 @app.route('/remove', methods=('GET', 'POST'))
