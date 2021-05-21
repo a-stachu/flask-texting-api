@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Hi, {{ current_user.username }}!</h1>
+
+<p> Your posts: </p>
+    {% for message in messages %}
+<div><p><b>{{ message.id }}</b> : {{ message.text }}</p></div>
+    {% endfor %}
+
+    <form action="" method="POST">
+        {{ form.hidden_tag() }}
+        <p>Remove:</p>
+        <p>
+            {{ form.record.label }}<br>
+            {{ form.record(size=4) }}<br>
+            {% for error in form.record.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+{% endblock %}

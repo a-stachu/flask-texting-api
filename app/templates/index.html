@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% for message in messages %}
+<div><p>{{ message.user.username }} posted:[ <b>{{ message.text }} ] </b>| This text message has been shown: <b>{{ message.counter }}</b> times</p></div>
+    {% endfor %}
+
+{% endblock %}
