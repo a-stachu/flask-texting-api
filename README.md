@@ -1,6 +1,24 @@
 # flask-texting-api
 Simple API for creating, editing, removing and viewing text messages with its own authentication system (Flask, Flask-login, SQLAlchemy, Sqlite3).
 
+### Heroku | [url](https://flask-text-app.herokuapp.com)
+The app has been deployed on Heroku. To make that possible:
+1. [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and [guncorn](https://gunicorn.org) were installed
+2. `Proclife.txt` was created with following code inside:
+```web: gunicorn wsgi:app```
+3. `requirements.txt` was created using following command:
+```pip freeze > requirements.txt```
+
+After that we logged in to Heroku and cloned source code to our local machine. Then changes could have been finally deployed to Heroku using Git.
+```
+$ heroku login
+$ heroku git:clone -a flask-text-app
+$ cd flask-text-app
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
+```
+
 ### Reference:
 - Form-handling: [WTForms](https://wtforms.readthedocs.io/en/2.3.x/)
 - Authentication: [Flask-login](https://flask-login.readthedocs.io/en/latest/) + [Werkzeug-security](https://werkzeug.palletsprojects.com/en/2.0.x/utils/) 
